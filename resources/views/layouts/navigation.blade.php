@@ -18,6 +18,19 @@
                     <x-nav-link :href="route('visi-misi')" :active="request()->routeIs('visi-misi')">
                         {{ __('Visi Misi') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('struktur')" :active="request()->routeIs('struktur')">
+                        {{ __('Struktur') }}
+                    </x-nav-link><x-nav-link :href="route('pegawai')" :active="request()->routeIs('pegawai')">
+                        {{ __('Pegawai') }}
+                    </x-nav-link><x-nav-link :href="route('buku')" :active="request()->routeIs('buku')">
+                        {{ __('Buku') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('galeri')" :active="request()->routeIs('galeri')">
+                        {{ __('Galeri') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('kontak')" :active="request()->routeIs('kontak')">
+                        {{ __('Kontak') }}
+                    </x-nav-link>
                 </div>
             </div>
 
