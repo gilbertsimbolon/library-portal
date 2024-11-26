@@ -20,10 +20,9 @@
                     </x-nav-link>
                     <x-nav-link :href="route('struktur')" :active="request()->routeIs('struktur')">
                         {{ __('Struktur') }}
-                    </x-nav-link><x-nav-link :href="route('pegawai')" :active="request()->routeIs('pegawai')">
+                    </x-nav-link>
+                    <x-nav-link :href="route('pegawai')" :active="request()->routeIs('pegawai')">
                         {{ __('Pegawai') }}
-                    </x-nav-link><x-nav-link :href="route('buku')" :active="request()->routeIs('buku')">
-                        {{ __('Buku') }}
                     </x-nav-link>
                     <x-nav-link :href="route('galeri')" :active="request()->routeIs('galeri')">
                         {{ __('Galeri') }}

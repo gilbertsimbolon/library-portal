@@ -23,10 +23,6 @@ Route::get('/pegawai', function () {
     return view('pegawai');
 })->middleware(['auth', 'verified'])->name('pegawai');
 
-Route::get('/buku', function () {
-    return view('buku');
-})->middleware(['auth', 'verified'])->name('buku');
-
 Route::get('/galeri', function () {
     return view('galeri');
 })->middleware(['auth', 'verified'])->name('galeri');
