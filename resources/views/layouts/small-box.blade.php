@@ -9,7 +9,7 @@
         <div class="icon">
             <i class="ion ion-person-add"></i>
         </div>
-            <a href="#" class="small-box-footer">More info 
+            <a href="/admin/data-user" class="small-box-footer">More info 
                 <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -24,7 +24,7 @@
         <div class="icon">
             <i class="ion ion-person-add"></i>
         </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="/admin/data-admin" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
         </div>
           <!-- ./col -->
@@ -39,7 +39,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/admin/anggota-perpustakaan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
