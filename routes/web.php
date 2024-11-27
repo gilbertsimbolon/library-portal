@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,8 +38,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth', 'verified', 'role:admin')->group(function () {
-    Route::get('/admin');
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin/dashboard', [AdminController::class, 'index']);
+    Route::get('/admin/data-user', [AdminController::class, 'index']);
+    Route::get('/admin/data-admin', [AdminController::class, 'index']);
+    Route::get('/admin/visi-misi', [AdminController::class, 'index']);
+    Route::get('/admin/struktur', [AdminController::class, 'index']);
+    Route::get('/admin/pegawai', [AdminController::class, 'index']);
+    Route::get('/admin/galeri', [AdminController::class, 'index']);
 });
 
 require __DIR__.'/auth.php';
