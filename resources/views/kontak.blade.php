@@ -125,7 +125,7 @@
     </div>
     <!-- Modal Success -->
     <div id="successModal"
-        class="modal fixed top-0 left-0 z-50 hidden w-full h-full bg-gray-500 bg-opacity-75 flex justify-center items-center">
+        class="modal fixed top-0 left-0 z-50 w-full h-full bg-gray-500 bg-opacity-75 flex justify-center items-center">
         <div class="modal-content bg-white p-6 rounded-lg">
             <h3 class="text-lg font-bold">Pendaftaran Berhasil!</h3>
             <p class="mt-4">Selamat, Anda telah berhasil mendaftar sebagai anggota perpustakaan. Silahkan datang ke Perpustakaan untuk mengambil Kartu Anggota Perpustakaan.</p>
