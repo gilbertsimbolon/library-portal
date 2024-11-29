@@ -13,6 +13,8 @@ class LibraryMembers extends Model
         'nama',
         'nim',
         'email_edukasi',
+        'no_hp',
+        'no_wa',
         'fakultas',
         'program_studi'
     ];

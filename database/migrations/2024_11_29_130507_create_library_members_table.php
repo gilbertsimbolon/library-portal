@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('library_members', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('nim');
-            $table->string('email_edukasi');
+            $table->string('nim')->unique();
+            $table->string('email_edukasi')->unique();
+            $table->string('no_hp');
+            $table->string('no_wa');
             $table->string('fakultas');
             $table->string('program_studi');
             $table->timestamps();

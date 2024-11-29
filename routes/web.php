@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LibraryMemberController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,9 +29,14 @@ Route::get('/galeri', function () {
     return view('galeri');
 })->middleware(['auth', 'verified'])->name('galeri');
 
-Route::get('/kontak', function () {
-    return view('kontak');
-})->middleware(['auth', 'verified'])->name('kontak');
+// Route::get('/kontak', function () {
+//     return view('kontak');
+// })->middleware(['auth', 'verified'])->name('kontak');
+
+Route::group(['prefix' => 'kontak'], function () {
+    Route::get('/', [LibraryMemberController::class, 'create'])->name('kontak');
+    Route::post('/', [LibraryMemberController::class, 'store'])->name('kontak.store');
+});
 
 Route::middleware('auth', 'verified', 'role.user')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
