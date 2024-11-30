@@ -9,14 +9,14 @@
         <div class="flex flex-col justify-start items-center pt-14 h-[calc(100vh-64px)] text-center text-white px-6">
             <div class="mx-auto text-center max-w-7xl h-4/6">
                 <h2 class="font-serif text-5xl font-bold text-gray-900" style="letter-spacing: 3px">VISI & MISI</h2>
-                <div class="flex flex-col h-full gap-10 mt-12 font-serif lg:flex-row">     
+                <div class="flex flex-col h-full gap-10 mt-12 font-serif lg:flex-row">
                     @if ($visiMisi)
                     <!-- Bagian Visi -->
                     <div class="flex-1 px-8 py-8">
                         <h3 class="text-3xl font-semibold text-left text-gray-800">VISI</h3>
                         <p class="mt-4 text-lg tracking-wide text-justify text-gray-700">
                         {{ $visiMisi->visi }}
-                        </p>    
+                        </p>
                     </div>
 
                     <!-- Garis Vertikal -->
@@ -24,13 +24,19 @@
 
                     <!-- Bagian Misi -->
                     <div class="flex-1 px-8 py-8">
-                        <h3 class="text-3xl font-semibold text-right text-gray-800">MISI</h3>                           
-                        <p class="mt-4 text-lg tracking-wide text-justify text-gray-700">
-                            {{ $visiMisi->misi }}
-                        </p>
+                        <h3 class="text-3xl font-semibold text-right text-gray-800">MISI</h3>
+
+                        <ul class="mt-4 text-lg tracking-wide text-justify text-gray-700">
+                            @foreach ($visiMisi->misi as $misi)
+                                <li>
+                                    {{ htmlspecialchars($misi) }}
+                                </li>
+                            @endforeach
+                        </ul>
+
                     </div>
                     @else
-                        <p>Tidak ada visi dan misi yang ditemukan.</p>    
+                        <p>Tidak ada visi dan misi yang ditemukan.</p>
                     @endif
                 </div>
             </div>
