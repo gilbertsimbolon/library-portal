@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('structures', function (Blueprint $table) {
             $table->id();
+            $table->string('structure_img');
             $table->timestamps();
         });
     }
