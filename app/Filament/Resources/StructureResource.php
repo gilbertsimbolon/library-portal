@@ -32,7 +32,8 @@ class StructureResource extends Resource
             FileUpload::make('structure_img')
                 ->label('Gambar Struktur')
                 ->image()
-                ->nullable()
+                ->visibility('public')
+                ->required(),
             ]);
     }
 
@@ -40,7 +41,10 @@ class StructureResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('structure_img'),
+                ImageColumn::make('structure_img')
+                ->visibility('public')
+                ->width(1280)
+                ->height(960),
             ])
             ->filters([
                 //

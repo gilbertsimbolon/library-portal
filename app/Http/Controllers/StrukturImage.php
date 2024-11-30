@@ -9,7 +9,7 @@ class StrukturImage extends Controller
 {
     public function index()
     {
-        $strukturImage = Structure::all();
+        $strukturImage = Structure::first();
 
         return view('struktur', compact('strukturImage'));
     }
