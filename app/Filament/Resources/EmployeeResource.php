@@ -32,6 +32,9 @@ class EmployeeResource extends Resource
                 TextInput::make('jabatan')
                 ->required()
                 ->maxLength(255),
+                TextInput::make('nip')
+                ->required()
+                ->maxLength(255),
             ]);
     }
 
@@ -42,6 +45,8 @@ class EmployeeResource extends Resource
                 TextColumn::make('nama')
                 ->searchable(),
                 TextColumn::make('jabatan')
+                ->searchable(),
+                TextColumn::make('nip')
                 ->searchable(),
             ])
             ->filters([
