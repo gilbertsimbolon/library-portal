@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\LibraryMemberController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StrukturImage;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -21,9 +23,7 @@ Route::get('/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi'
 
 Route::get('struktur', [StrukturImage::class, 'index'])->name('struktur')->middleware('auth', 'verified');
 
-Route::get('/pegawai', function () {
-    return view('pegawai');
-})->middleware(['auth', 'verified'])->name('pegawai');
+Route::get('pegawai', [EmployeeController::class, 'index'])->name('pegawai')->middleware('auth', 'verified');
 
 Route::get('/galeri', function () {
     return view('galeri');
