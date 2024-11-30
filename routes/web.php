@@ -3,8 +3,10 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LibraryMemberController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StrukturImage;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/', function () {
@@ -15,11 +17,9 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
+Route::get('/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi')->middleware('auth', 'verified');
 
-Route::get('/struktur', function () {
-    return view('struktur');
-})->middleware(['auth', 'verified'])->name('struktur');
+Route::get('struktur', [StrukturImage::class, 'index'])->name('struktur')->middleware('auth', 'verified');
 
 Route::get('/pegawai', function () {
     return view('pegawai');
