@@ -86,5 +86,10 @@ return [
 
     'livewire_loading_delay' => 'default',
 
-    
+    'middleware' => [
+        'web',
+        'auth',
+        'verified',
+        'role:admin'
+    ],
 ];
