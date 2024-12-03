@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Filament::auth(function () {
-            return Auth::check() && Auth::user()->role === 'admin';
+            return Auth::user()->role === 'admin';
         });
     }
 }
