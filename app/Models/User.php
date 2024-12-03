@@ -48,8 +48,8 @@ class User extends Authenticatable
         ];
     }
 
-    // public function canAccessPanel(): bool
-    // {
-    //     return $this->hasRole('admin');
-    // }
+    public function canAccessPanel(): bool
+    {
+        return $this->hasRole('admin');
+    }
 }

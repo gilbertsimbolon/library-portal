@@ -90,6 +90,6 @@ return [
         'web',
         'auth',
         'verified',
-        'role:admin'
+        'role:admin',
     ],
 ];

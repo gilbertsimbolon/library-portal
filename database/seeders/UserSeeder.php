@@ -16,9 +16,9 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Laura Ivo Perangin-angin',
-            'email' => '20202020@unima.ac.id',
-            'role' => 'user',
-            'password' => Hash::make('20202020')
+            'email' => 'admin@unima.ac.id',
+            'role' => 'admin',
+            'password' => Hash::make('admin')
         ]);
     }
 }
