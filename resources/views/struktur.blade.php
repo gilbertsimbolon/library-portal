@@ -4,7 +4,7 @@
             {{ __('Home') }}
         </h2>
     </x-slot>
-        <div class="flex flex-col justify-start items-center h-[calc(100vh-64px)] text-center text-white px-6">
+        <div class="flex flex-col justify-start items-center h-auto lg:h-[calc(100vh-64px)] sm:h-[calc(100vh-64px)] text-center text-white px-6 bg-white">
             <div class="w-full h-full mx-auto text-center object-contain">
                 @if ($strukturImage)
                     <img src="{{ Storage::url($strukturImage->structure_img) }}" alt="Struktur Organisasi" class="w-full h-full object-contain">

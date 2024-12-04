@@ -17,31 +17,37 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased bg-gray-900">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
+    <div class="min-h-screen flex flex-col justify-center items-center pt-6 sm:pt-0">
+        <div class="w-full flex flex-col justify-center items-center text-center">
+            <!-- Logo -->
             <div class="w-20 h-20 fill-current">
                 <a href="/">
                     <img src="{{ asset('img/LOGO UNIMA.png') }}" class="w-20 h-20">
                 </a>
             </div>
+
+            <!-- Title -->
             <div class="text-white font-sans text-center text-2xl mt-5">
                 <h2>PORTAL PERPUSTAKAAN <br> UNIVERSITAS NEGERI MANADO</h2>
             </div>
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                    href="{{ route('login') }}">
-                    <x-primary-button class="ms-3">
+
+            <!-- Login and Register Buttons -->
+            <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 items-center mt-6">
+                <a href="{{ route('login') }}">
+                    <button
+                        class="w-full sm:w-48 px-6 py-2 text-xs sm:text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         {{ __('Log in') }}
-                    </x-primary-button>
+                    </button>
                 </a>
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                    href="{{ route('register') }}">
-                    <x-primary-button class="ms-3">
+                <a href="{{ route('register') }}">
+                    <button
+                        class="w-full sm:w-48 px-6 py-2 text-xs sm:text-sm font-medium text-gray-900 bg-white rounded-md shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         {{ __('Register') }}
-                    </x-primary-button>
+                    </button>
                 </a>
             </div>
         </div>
     </div>
 </body>
+
 </html>

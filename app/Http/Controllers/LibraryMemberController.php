@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LibraryMembers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LibraryMemberController extends Controller
 {
@@ -14,7 +15,7 @@ class LibraryMemberController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $validatedData = Validator::make(request()->all(), [
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:20',
             'email_edukasi' => 'required|email',
@@ -24,15 +25,26 @@ class LibraryMemberController extends Controller
             'program_studi' => 'required|string|max:255',
         ]);
 
-        try {
-            // Insert data ke database
-            LibraryMembers::create($validatedData);
+        if ($validatedData->fails()) {
+            return redirect()->route('kontak')
+                ->withErrors($validatedData)
+                ->withInput();
+        }
 
-            // Jika sukses, redirect dengan session sukses
-            return redirect()->route('kontak')->with('success', true);
-        } catch (\Exception $e) {
-            // Jika gagal, redirect dengan session error
-            return redirect()->route('kontak')->with('error', true);
+        $libraryMembers = LibraryMembers::create($request->only([
+            'nama',
+            'nim',
+            'email_edukasi',
+            'no_hp',
+            'no_wa',
+            'fakultas',
+            'program_studi'
+        ]));
+
+        if ($libraryMembers) {
+            return redirect()->route('kontak')->with('success', 'Pendaftaran Anggota Perpustakaan Berhasil!');
+        } else {
+            return redirect()->route('kontak')->with('error', 'Pendaftaran Anggota Perpustakaan Gagal!');
         }
     }
 }

@@ -35,7 +35,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/struktur', [StrukturImage::class, 'index'])->name('struktur');
     Route::get('/pegawai', [EmployeeController::class, 'index'])->name('pegawai');
     Route::get('/kontak', [LibraryMemberController::class, 'create'])->name('kontak');
-    Route::post('/kontak', [LibraryMemberController::class, 'store'])->name('kontak.store');
+    Route::post('/kontak/store', [LibraryMemberController::class, 'store'])->name('kontak.store');
 });
 
 Route::middleware('auth', 'verified')->group(function () {
